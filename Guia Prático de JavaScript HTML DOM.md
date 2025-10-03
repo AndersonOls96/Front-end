@@ -430,10 +430,10 @@ btnReset.addEventListener(\'click\', function() {
 
     <script>
         // 1. Acessando elementos pelo ID
-        const contadorElement = document.getElementById(\'contador\');
-        const btnIncrementar = document.getElementById(\'btnIncrementar\');
-        const btnDecrementar = document.getElementById(\'btnDecrementar\');
-        const btnReset = document.getElementById(\'btnReset\');
+        const contadorElement = document.getElementById('contador');
+        const btnIncrementar = document.getElementById('btnIncrementar');
+        const btnDecrementar = document.getElementById('btnDecrementar');
+        const btnReset = document.getElementById('btnReset');
 
         // 2. Variável para armazenar o valor atual
         let valorContador = 0;
@@ -444,17 +444,17 @@ btnReset.addEventListener(\'click\', function() {
         }
 
         // 4. Adicionando event listeners
-        btnIncrementar.addEventListener(\'click\', function() {
+        btnIncrementar.addEventListener('click', function() {
             valorContador++;
             atualizarContador();
         });
 
-        btnDecrementar.addEventListener(\'click\', function() {
+        btnDecrementar.addEventListener('click', function() {
             valorContador--;
             atualizarContador();
         });
 
-        btnReset.addEventListener(\'click\', function() {
+        btnReset.addEventListener('click', function() {
             valorContador = 0;
             atualizarContador();
         });
@@ -605,10 +605,10 @@ Este projeto demonstra a criação dinâmica de elementos (`createElement`, `app
 
     <script>
         // Acessando elementos do DOM
-        const inputTarefa = document.getElementById(\'inputTarefa\');
-        const btnAdicionar = document.getElementById(\'btnAdicionar\');
-        const listaTarefas = document.getElementById(\'listaTarefas\');
-        const contadorTarefas = document.getElementById(\'contadorTarefas\');
+        const inputTarefa = document.getElementById('inputTarefa');
+        const btnAdicionar = document.getElementById('btnAdicionar');
+        const listaTarefas = document.getElementById('listaTarefas');
+        const contadorTarefas = document.getElementById('contadorTarefas');
 
         // Array para armazenar as tarefas
         let tarefas = [];
@@ -617,28 +617,28 @@ Este projeto demonstra a criação dinâmica de elementos (`createElement`, `app
         // Função para criar um novo item de tarefa
         function criarItemTarefa(id, texto) {
             // Criar elemento &lt;li&gt;
-            const li = document.createElement(\'li\');
-            li.className = \'item-tarefa\';
+            const li = document.createElement('li');
+            li.className = 'item-tarefa';
             li.dataset.id = id;
 
             // Criar span para o texto da tarefa
-            const spanTexto = document.createElement(\'span\');
-            spanTexto.className = \'texto-tarefa\';
+            const spanTexto = document.createElement('span');
+            spanTexto.className = 'texto-tarefa';
             spanTexto.textContent = texto;
 
             // Criar botão de concluir
-            const btnConcluir = document.createElement(\'button\');
-            btnConcluir.className = \'btn-concluir\';
-            btnConcluir.textContent = \'Concluir\';
-            btnConcluir.addEventListener(\'click\', function() {
+            const btnConcluir = document.createElement('button');
+            btnConcluir.className = 'btn-concluir';
+            btnConcluir.textContent = 'Concluir';
+            btnConcluir.addEventListener('click', function() {
                 alternarConclusao(id);
             });
 
             // Criar botão de remover
-            const btnRemover = document.createElement(\'button\');
-            btnRemover.className = \'btn-remover\';
-            btnRemover.textContent = \'Remover\';
-            btnRemover.addEventListener(\'click\', function() {
+            const btnRemover = document.createElement('button');
+            btnRemover.className = 'btn-remover';
+            btnRemover.textContent = 'Remover';
+            btnRemover.addEventListener('click', function() {
                 removerTarefa(id);
             });
 
@@ -654,8 +654,8 @@ Este projeto demonstra a criação dinâmica de elementos (`createElement`, `app
         function adicionarTarefa() {
             const texto = inputTarefa.value.trim();
             
-            if (texto === \'\') {
-                alert(\'Por favor, digite uma tarefa!\');
+            if (texto === '') {
+                alert('Por favor, digite uma tarefa!');
                 return;
             }
 
@@ -674,7 +674,7 @@ Este projeto demonstra a criação dinâmica de elementos (`createElement`, `app
             listaTarefas.appendChild(itemTarefa);
 
             // Limpar input
-            inputTarefa.value = \'\';
+            inputTarefa.value = '';
 
             // Atualizar contador
             atualizarContador();
@@ -690,11 +690,11 @@ Este projeto demonstra a criação dinâmica de elementos (`createElement`, `app
                 // Encontrar elemento no DOM
                 const elemento = document.querySelector(`[data-id="${id}"]`);
                 if (tarefa.concluida) {
-                    elemento.classList.add(\'concluida\');
-                    elemento.querySelector(\'.btn-concluir\').textContent = \'Desfazer\';
+                    elemento.classList.add('concluida');
+                    elemento.querySelector('.btn-concluir').textContent = 'Desfazer';
                 } else {
-                    elemento.classList.remove(\'concluida\');
-                    elemento.querySelector(\'.btn-concluir\').textContent = \'Concluir\';
+                    elemento.classList.remove('concluida');
+                    elemento.querySelector('.btn-concluir').textContent = 'Concluir';
                 }
 
                 atualizarContador();
@@ -723,11 +723,11 @@ Este projeto demonstra a criação dinâmica de elementos (`createElement`, `app
         }
 
         // Event listeners
-        btnAdicionar.addEventListener(\'click\', adicionarTarefa);
+        btnAdicionar.addEventListener('click', adicionarTarefa);
 
         // Permitir adicionar tarefa pressionando Enter
-        inputTarefa.addEventListener(\'keypress\', function(e) {
-            if (e.key === \'Enter\') {
+        inputTarefa.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
                 adicionarTarefa();
             }
         });
@@ -906,73 +906,73 @@ Este exemplo explora a manipulação de atributos (`setAttribute`, `getAttribute
         const imagensData = [
             {
                 id: 1,
-                src: \'https://picsum.photos/300/200?random=1\',
-                alt: \'Paisagem montanhosa\',
-                categoria: \'natureza\',
-                titulo: \'Montanhas ao Pôr do Sol\'
+                src: 'https://picsum.photos/300/200?random=1',
+                alt: 'Paisagem montanhosa',
+                categoria: 'natureza',
+                titulo: 'Montanhas ao Pôr do Sol'
             },
             {
                 id: 2,
-                src: \'https://picsum.photos/300/200?random=2\',
-                alt: \'Cidade moderna\',
-                categoria: \'cidade\',
-                titulo: \'Skyline Urbano\'
+                src: 'https://picsum.photos/300/200?random=2',
+                alt: 'Cidade moderna',
+                categoria: 'cidade',
+                titulo: 'Skyline Urbano'
             },
             {
                 id: 3,
-                src: \'https://picsum.photos/300/200?random=3\',
-                alt: \'Gato fofo\',
-                categoria: \'animais\',
-                titulo: \'Gato Doméstico\'
+                src: 'https://picsum.photos/300/200?random=3',
+                alt: 'Gato fofo',
+                categoria: 'animais',
+                titulo: 'Gato Doméstico'
             },
             {
                 id: 4,
-                src: \'https://picsum.photos/300/200?random=4\',
-                alt: \'Floresta verde\',
-                categoria: \'natureza\',
-                titulo: \'Floresta Tropical\'
+                src: 'https://picsum.photos/300/200?random=4',
+                alt: 'Floresta verde',
+                categoria: 'natureza',
+                titulo: 'Floresta Tropical'
             },
             {
                 id: 5,
-                src: \'https://picsum.photos/300/200?random=5\',
-                alt: \'Rua da cidade\',
-                categoria: \'cidade\',
-                titulo: \'Rua Movimentada\'
+                src: 'https://picsum.photos/300/200?random=5',
+                alt: 'Rua da cidade',
+                categoria: 'cidade',
+                titulo: 'Rua Movimentada'
             },
             {
                 id: 6,
-                src: \'https://picsum.photos/300/200?random=6\',
-                alt: \'Cachorro brincando\',
-                categoria: \'animais\',
-                titulo: \'Cachorro no Parque\'
+                src: 'https://picsum.photos/300/200?random=6',
+                alt: 'Cachorro brincando',
+                categoria: 'animais',
+                titulo: 'Cachorro no Parque'
             }
         ];
 
         // Acessando elementos do DOM
-        const galeria = document.getElementById(\'galeria\');
-        const modal = document.getElementById(\'modal\');
-        const imagemModal = document.getElementById(\'imagemModal\');
-        const infoImagem = document.getElementById(\'infoImagem\');
-        const btnFechar = document.querySelector(\'.fechar\');
-        const btnsFiltro = document.querySelectorAll(\'.btn-filtro\');
+        const galeria = document.getElementById('galeria');
+        const modal = document.getElementById('modal');
+        const imagemModal = document.getElementById('imagemModal');
+        const infoImagem = document.getElementById('infoImagem');
+        const btnFechar = document.querySelector('.fechar');
+        const btnsFiltro = document.querySelectorAll('.btn-filtro');
 
         // Função para criar um item da galeria
         function criarItemGaleria(imagem) {
             // Criar div container
-            const div = document.createElement(\'div\');
-            div.className = \'item-galeria\';
+            const div = document.createElement('div');
+            div.className = 'item-galeria';
             div.dataset.categoria = imagem.categoria;
             div.dataset.id = imagem.id;
 
             // Criar elemento img
-            const img = document.createElement(\'img\');
+            const img = document.createElement('img');
             img.src = imagem.src;
             img.alt = imagem.alt;
-            img.setAttribute(\'loading\', \'lazy\'); // Lazy loading
+            img.setAttribute('loading', 'lazy'); // Lazy loading
 
             // Criar legenda
-            const legenda = document.createElement(\'div\');
-            legenda.className = \'legenda\';
+            const legenda = document.createElement('div');
+            legenda.className = 'legenda';
             legenda.textContent = imagem.titulo;
 
             // Adicionar elementos ao container
@@ -980,7 +980,7 @@ Este exemplo explora a manipulação de atributos (`setAttribute`, `getAttribute
             div.appendChild(legenda);
 
             // Adicionar evento de clique para abrir modal
-            div.addEventListener(\'click\', function() {
+            div.addEventListener('click', function() {
                 abrirModal(imagem);
             });
 
@@ -990,7 +990,7 @@ Este exemplo explora a manipulação de atributos (`setAttribute`, `getAttribute
         // Função para renderizar a galeria
         function renderizarGaleria(imagens = imagensData) {
             // Limpar galeria
-            galeria.innerHTML = \'\';
+            galeria.innerHTML = '';
 
             // Adicionar cada imagem
             imagens.forEach(imagem => {
@@ -1001,21 +1001,21 @@ Este exemplo explora a manipulação de atributos (`setAttribute`, `getAttribute
 
         // Função para filtrar imagens por categoria
         function filtrarPorCategoria(categoria) {
-            const itens = document.querySelectorAll(\'.item-galeria\');
+            const itens = document.querySelectorAll('.item-galeria');
             
             itens.forEach(item => {
-                if (categoria === \'todas\' || item.dataset.categoria === categoria) {
-                    item.style.display = \'block\';
+                if (categoria === 'todas' || item.dataset.categoria === categoria) {
+                    item.style.display = 'block';
                     // Animação de entrada
-                    item.style.opacity = \'0\';
-                    item.style.transform = \'scale(0.8)\';
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
                     setTimeout(() => {
-                        item.style.transition = \'opacity 0.3s ease, transform 0.3s ease\';
-                        item.style.opacity = \'1\';
-                        item.style.transform = \'scale(1)\';
+                        item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                        item.style.opacity = '1';
+                        item.style.transform = 'scale(1)';
                     }, 50);
                 } else {
-                    item.style.display = \'none\';
+                    item.style.display = 'none';
                 }
             });
         }
@@ -1025,51 +1025,51 @@ Este exemplo explora a manipulação de atributos (`setAttribute`, `getAttribute
             imagemModal.src = imagem.src;
             imagemModal.alt = imagem.alt;
             infoImagem.textContent = `${imagem.titulo} - Categoria: ${imagem.categoria}`;
-            modal.style.display = \'block\';
+            modal.style.display = 'block';
             
             // Adicionar classe para animação
-            modal.style.opacity = \'0\';
+            modal.style.opacity = '0';
             setTimeout(() => {
-                modal.style.transition = \'opacity 0.3s ease\';
-                modal.style.opacity = \'1\';
+                modal.style.transition = 'opacity 0.3s ease';
+                modal.style.opacity = '1';
             }, 10);
         }
 
         // Função para fechar modal
         function fecharModal() {
-            modal.style.opacity = \'0\';
+            modal.style.opacity = '0';
             setTimeout(() => {
-                modal.style.display = \'none\';
+                modal.style.display = 'none';
             }, 300);
         }
 
         // Event listeners para filtros
         btnsFiltro.forEach(btn => {
-            btn.addEventListener(\'click\', function() {
+            btn.addEventListener('click', function() {
                 // Remover classe ativo de todos os botões
-                btnsFiltro.forEach(b => b.classList.remove(\'ativo\'));
+                btnsFiltro.forEach(b => b.classList.remove('ativo'));
                 
                 // Adicionar classe ativo ao botão clicado
-                this.classList.add(\'ativo\');
+                this.classList.add('ativo');
                 
                 // Filtrar imagens
-                const categoria = this.getAttribute(\'data-categoria\');
+                const categoria = this.getAttribute('data-categoria');
                 filtrarPorCategoria(categoria);
             });
         });
 
         // Event listeners para modal
-        btnFechar.addEventListener(\'click\', fecharModal);
+        btnFechar.addEventListener('click', fecharModal);
         
-        modal.addEventListener(\'click\', function(e) {
+        modal.addEventListener('click', function(e) {
             if (e.target === modal) {
                 fecharModal();
             }
         });
 
         // Fechar modal com tecla ESC
-        document.addEventListener(\'keydown\', function(e) {
-            if (e.key === \'Escape\' && modal.style.display === \'block\') {
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
                 fecharModal();
             }
         });
@@ -1080,22 +1080,22 @@ Este exemplo explora a manipulação de atributos (`setAttribute`, `getAttribute
         // Demonstração adicional: Alterar tema da galeria
         function alternarTema() {
             const body = document.body;
-            if (body.style.backgroundColor === \'rgb(51, 51, 51)\' || body.style.backgroundColor === \'#333\') {
-                body.style.backgroundColor = \'#f5f5f5\';
-                body.style.color = \'#333\';
+            if (body.style.backgroundColor === 'rgb(51, 51, 51)' || body.style.backgroundColor === '#333') {
+                body.style.backgroundColor = '#f5f5f5';
+                body.style.color = '#333';
             } else {
-                body.style.backgroundColor = \'#333\';
-                body.style.color = \'#fff\';
+                body.style.backgroundColor = '#333';
+                body.style.color = '#fff';
             }
         }
 
         // Adicionar botão para alternar tema
-        const btnTema = document.createElement(\'button\');
-        btnTema.textContent = \'Alternar Tema\';
-        btnTema.className = \'btn-filtro\';
-        btnTema.style.marginLeft = \'20px\';
-        btnTema.addEventListener(\'click\', alternarTema);
-        document.querySelector(\'.controles\').appendChild(btnTema);
+        const btnTema = document.createElement('button');
+        btnTema.textContent = 'Alternar Tema';
+        btnTema.className = 'btn-filtro';
+        btnTema.style.marginLeft = '20px';
+        btnTema.addEventListener('click', alternarTema);
+        document.querySelector('.controles').appendChild(btnTema);
     </script>
 </body>
 </html>
