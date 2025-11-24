@@ -1,9 +1,4 @@
 # Guia Prático: Firebase com Vue.js e Tailwind CSS
-
-**Autor:** Manus AI  
-**Nível:** Intermediário  
-**Pré-requisitos:** Conhecimento em Vue.js 3 e Tailwind CSS
-
 ---
 
 ## Índice
